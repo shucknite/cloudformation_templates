@@ -27,7 +27,7 @@
     "InstanceType":{
       "Description":"Amazon EC2 instance type.",
       "Type":"String",
-      "Default":"t1.micro",
+      "Default":"t2.micro",
       "ConstraintDescription":"Must be a valid Amazon EC2 instance type."
     },
     "InstanceCount":{
@@ -642,7 +642,7 @@
               "01-install-host-agent":{
                 "command":"C:\\cfn\\codedeploy-agent.msi /quiet /l C:\\cfn\\host-agent-install-log.txt",
                 "ignoreErrors":"true",
-                "waitAfterCompletion":0
+                "waitAfterCompletion":3000
               },
               "02-signal-ready":{
                 "command":{
@@ -658,7 +658,7 @@
                     ]
                   ]
                 },
-                "waitAfterCompletion":0
+                "waitAfterCompletion":3000
               }
             },
             "services":{
@@ -849,12 +849,12 @@
                   ]
                 },
                 "cwd":"C:/cfn",
-                "waitAfterCompletion":0
+                "waitAfterCompletion":3000
               },
               "01-install-host-agent":{
                 "command":"C:\\cfn\\codedeploy-agent.msi /quiet /l C:\\cfn\\host-agent-install-log.txt",
                 "ignoreErrors":"true",
-                "waitAfterCompletion":0
+                "waitAfterCompletion":3000
               },
               "02-signal-ready":{
                 "command":{
